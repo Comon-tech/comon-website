@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function Navbar() {
   return (
-    <div className="fixed top-0 w-full flex justify-between p-4 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 shadow-lg border border-[#3c3e44]">
+    <div className="fixed top-0 w-[90%] flex justify-between mt-4 p-4 rounded-[50px] bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 shadow-lg border border-[#3c3e44]">
       <div className='flex space-x-4'>
         <Image
           className="dark:invert"
