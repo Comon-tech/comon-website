@@ -3,7 +3,7 @@ const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 const guild_id = process.env.NEXT_PUBLIC_GUILD_ID;
 
 export async function GET() {
-  const endpoint = `${base_url}/actors/${guild_id}/top/?limit=10`;
+  const endpoint = `${base_url}/members/${guild_id}`;
 
   try {
     const response = await fetch(endpoint, {

@@ -2,12 +2,14 @@
 import { useEffect, useState } from "react";
 import { Actor } from "./types";
 
-
 export default function Home() {
   const [topComoners, setTopComoners] = useState<Actor[] | undefined>();
+  const [loading, setLoading] = useState(true);
 
   async function getTopComoners() {
     const endpoint = "/api/leaderboard";
+
+    setLoading(true);
     const response = await fetch(endpoint, {
       method: "GET",
       headers: {
@@ -17,7 +19,8 @@ export default function Home() {
 
     if (response.ok) {
       const res = await response.json();
-      setTopComoners(res.data);
+      setTopComoners(res.data.slice(0, 10));
+      setLoading(false);
     } else {
       const error = await response.json();
       console.error(error);
@@ -26,7 +29,6 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // document.title = "Comon";
     getTopComoners();
   }
     , []);
@@ -48,14 +50,30 @@ export default function Home() {
           <p className="font-bold">Top Comoners....</p>
 
           <div className="grid grid-cols-5 gap-2 w-full">
-            {topComoners?.map((actor) => (
-              <div key={actor.id} className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#101010] border border-[#3c3e44] rounded-2xl border border-[#3c3e44]">
-                <img className="w-[80%] rounded-2xl" src={actor.avatar_url} alt=""
-                ></img>
-                <p className="font-bold">{actor.display_name}</p>
-                <p>Level: {actor.level}</p>
+            {loading ? (
+              Array.from({ length: 10 }).map((_, index:number) => (
+              <div key={index} className="relative animate-pulse space-x-4 flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#101010] border border-[#3c3e44] rounded-2xl p-2">
+                <div className="flex flex-col gap-2 w-full">
+                <div className="size-10 rounded-full bg-[#3c3e44]"></div>
+                <div className="col-span-2 h-2 rounded bg-[#3c3e44]"></div>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="col-span-2 h-2 rounded bg-[#3c3e44]"></div>
+                  <div className="col-span-1 h-2 rounded bg-[#3c3e44]"></div>
+                </div>
+                </div>
               </div>
-            ))}
+              ))
+
+            ) : (
+              topComoners?.map((actor) => (
+                <div key={actor.id} className="relative flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#101010] border border-[#3c3e44] rounded-2xl">
+                <img className="w-[80%] rounded-2xl" src={actor.diplay_avatar_url} alt="" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 rounded-2xl duration-300">
+                  <p className="font-bold">{actor.display_name}</p>
+                  <p>{actor.level}</p>
+                </div>
+                </div>
+            )))}
           </div>
         </div>
       </main>
