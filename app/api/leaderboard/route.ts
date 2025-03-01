@@ -17,7 +17,7 @@ export async function GET() {
     if (response.ok) {
       const res = await response.json();
 
-      console.log(res);
+    //   console.log(res);
       return NextResponse.json({
         data: res,
       });
