@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 const guild_id = process.env.NEXT_PUBLIC_GUILD_ID;
 
-export async function GET(req: any) {
+export async function GET() {
   const endpoint = `${base_url}/actors/${guild_id}/top/?limit=10`;
 
   try {
@@ -34,11 +34,12 @@ export async function GET(req: any) {
         },
       );
     }
-  } catch (error: any) {
+  } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         message: "Failed to connect to the server.",
-        error: error.message,
+        error: error,
       },
       {
         status: 500,

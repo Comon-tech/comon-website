@@ -1,4 +1,3 @@
-import { Figma, Github } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { FaReact } from "react-icons/fa";

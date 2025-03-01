@@ -8,7 +8,7 @@ export interface Actor {
     level: number;
     rank: number;
     gold: number;
-    items: any[];
+    items: object[];
 }
 
 export type Actors = Actor[];
