@@ -69,7 +69,7 @@ export default function Home() {
         ) : (
           topComoners?.map((actor) => (
           <div key={actor.id} className="z-0 relative flex flex-col items-center justify-center w-[120px] h-[120px] sm:w-[100px] sm:h-[100px] bg-[#101010] border border-[#3c3e44] rounded-2xl p-2">
-            <Image className="w-[80%] rounded-2xl border border-[#3c3e44]" src={actor.diplay_avatar_url} alt="" layout="fill" objectFit="cover" />
+            <Image className="w-[80%] rounded-2xl border border-[#3c3e44]" src={actor.display_avatar_url} alt="" layout="fill" objectFit="cover" />
             <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 rounded-2xl duration-300">
             <p className="font-bold text-center">{actor.display_name}</p>
             <p className="text-center">{actor.level}</p>
