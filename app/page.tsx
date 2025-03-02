@@ -27,6 +27,15 @@ export default function Home() {
       console.error(error);
     }
 
+  /*   try {
+      const res = await response.json();
+      setTopComoners(res.data.slice(0, 10));
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      
+    } */
+
   }
 
   useEffect(() => {
