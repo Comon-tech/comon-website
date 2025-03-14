@@ -2,8 +2,8 @@
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:2930889970.
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-const base_url = process.env.NEXT_PUBLIC_BASE_URL;
-const guild_id = process.env.NEXT_PUBLIC_GUILD_ID;
+// const base_url = process.env.NEXT_PUBLIC_BASE_URL;
+// const guild_id = process.env.NEXT_PUBLIC_GUILD_ID;
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
 export async function POST(req: NextRequest) {
