@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Script from "next/Script"
+import Script from "next/script"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         
-{/* <!-- Google tag (gtag.js) --> */}
+{/* Google tag (gtag.js) */}
 <Script async src="https://www.googletagmanager.com/gtag/js?id=G-X12JY637ZG"></Script>
 <Script>
   window.dataLayer = window.dataLayer || [];
