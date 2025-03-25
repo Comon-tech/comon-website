@@ -27,6 +27,15 @@ export default function Home() {
       console.error(error);
     }
 
+  /*   try {
+      const res = await response.json();
+      setTopComoners(res.data.slice(0, 10));
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+      
+    } */
+
   }
 
   useEffect(() => {
@@ -44,7 +53,7 @@ export default function Home() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
         <a href="https://discord.gg/eqSU46Y7xW" className="w-full p-2 text-center rounded-3xl border border-[#3c3e44] px-4 bg-gray-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10" >Join Comon server</a>
-        <a href="" className="w-full p-2 text-center rounded-3xl border border-[#3c3e44] px-4 bg-gray-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10" >Explore Comon first</a>
+        <a href="/activa" className="w-full p-2 text-center rounded-3xl border border-[#3c3e44] px-4 bg-gray-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10" >Explore Activa</a>
         </div>
 
       </div>
@@ -77,6 +86,7 @@ export default function Home() {
           </div>
         )))}
         </div>
+        
       </div>
       </main>
 
