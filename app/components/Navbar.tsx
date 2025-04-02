@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { IoMdMenu } from 'react-icons/io';
 import { LiaTimesSolid } from 'react-icons/lia';
+import Link from 'next/link';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +40,7 @@ function Navbar() {
       } ${isOpen && 'backdrop-blur-lg'}`}
     >
       <div className="flex justify-between items-center">
-        <div className="flex space-x-4 items-center">
+        <Link href={"/"} className="flex space-x-4 items-center">
           <Image
             // className="dark:invert"
             src="/assets/logos/logo-nobg.png"
@@ -48,7 +49,7 @@ function Navbar() {
             height={40}
             priority
           />
-        </div>
+        </Link>
         <button className="md:hidden text-white" onClick={toggleMenu}>
           {isOpen ? <LiaTimesSolid size={24} /> : <IoMdMenu size={24} />}
         </button>
@@ -73,9 +74,9 @@ function Navbar() {
             Home
           </h1>
         </a>
-        <a
+        <Link
           className="text-white p-2 rounded-3xl"
-          href="#"
+          href="/community"
           onClick={() => toggleBtnClicked('about')}
         >
           <h1
@@ -84,9 +85,9 @@ function Navbar() {
               'border rounded-3xl border-[#3c3e44] bg-gray-300 text-white'
             }`}
           >
-            About
+            Community
           </h1>
-        </a>
+        </Link>
         <a
           className="text-white p-2 rounded-3xl"
           href="#"
