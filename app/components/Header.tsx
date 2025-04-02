@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 function Header() {
   return (
-    <div className='flex flex-col items-center'>
-      <div className="relative w-[100px] h-[100px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px]">
+    <div className='grid items-center justify-items-center gap-16'>
+      <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px]">
        <Image
         // className="dark:invert"
-        src="/comon.png"
+        src="/assets/logos/logo-nobg.png"
         alt="Next.js logo"
         layout="fill"
         style={{ objectFit: 'contain' }}
