@@ -10,6 +10,23 @@ export interface Actor {
     rank: number;
     gold: number;
     items: object[];
+    is_member?: boolean;
+    health?: number;
+    base_max_health?: number;
+    extra_max_health?: number;
+    energy?: number;
+    base_max_energy?: number;
+    extra_max_energy?: number;
+    base_attack?: number;
+    extra_attack?: number;
+    base_defense?: number;
+    extra_defense?: number;
+    base_speed?: number;
+    extra_speed?: number;
+    item_stacks?: Record<string, unknown>;
+    equipped_items?: Record<string, unknown>;
+    display_icon_url?: string | null;
+    banner_url?: string | null;
+    created_at?: string;
+    joined_at?: string;
 }
-
-export type Actors = Actor[];
