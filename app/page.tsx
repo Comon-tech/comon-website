@@ -1,32 +1,32 @@
 'use client'
-import { useEffect, useState } from "react";
-import { Actor } from "./types";
-import Image from 'next/image';
+// import { useEffect, useState } from "react";
+// import { Actor } from "./types";
+// import Image from 'next/image';
 import Header from "./components/Header";
 
 export default function Home() {
-  const [topComoners, setTopComoners] = useState<Actor[] | undefined>();
-  const [loading, setLoading] = useState(true);
+  // const [topComoners, setTopComoners] = useState<Actor[] | undefined>();
+  // const [loading, setLoading] = useState(true);
 
-  async function getTopComoners() {
-    const endpoint = "/api/leaderboard";
+  // async function getTopComoners() {
+  //   const endpoint = "/api/leaderboard";
 
-    setLoading(true);
-    const response = await fetch(endpoint, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // setLoading(true);
+    // const response = await fetch(endpoint, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
 
-    if (response.ok) {
-      const res = await response.json();
-      setTopComoners(res.data.slice(0, 10));
-      setLoading(false);
-    } else {
-      const error = await response.json();
-      console.error(error);
-    }
+    // if (response.ok) {
+    //   const res = await response.json();
+      // setTopComoners(res.data.slice(0, 10));
+      // setLoading(false);
+    // } else {
+    //   const error = await response.json();
+    //   console.error(error);
+    // }
 
   /*   try {
       const res = await response.json();
@@ -37,12 +37,12 @@ export default function Home() {
       
     } */
 
-  }
+  // }
 
-  useEffect(() => {
-    getTopComoners();
-  }
-    , []);
+  // useEffect(() => {
+  //   getTopComoners();
+  // }
+  //   , []);
 
   return (
     <>
