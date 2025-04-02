@@ -78,7 +78,7 @@ function Page() {
                                         <div>
                                             <p className="text-center">
                                                 Joined {(() => {
-                                                    const joinedDate = new Date(actor.joined_at);
+                                                    const joinedDate = new Date(actor.joined_at ?? Date.now());
                                                     const now = new Date();
                                                     const diffInMs = now.getTime() - joinedDate.getTime();
                                                     const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
