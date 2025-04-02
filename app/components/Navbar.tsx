@@ -41,9 +41,9 @@ function Navbar() {
       <div className="flex justify-between items-center">
         <div className="flex space-x-4 items-center">
           <Image
-            className="dark:invert"
-            src="/comon.png"
-            alt="Next.js logo"
+            // className="dark:invert"
+            src="/assets/logos/logo-nobg.png"
+            alt="Comon logo"
             width={40}
             height={40}
             priority
