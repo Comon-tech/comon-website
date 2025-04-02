@@ -1,31 +1,32 @@
 'use client'
-import { useEffect, useState } from "react";
-import { Actor } from "./types";
-import Image from 'next/image';
+// import { useEffect, useState } from "react";
+// import { Actor } from "./types";
+// import Image from 'next/image';
+import Header from "./components/Header";
 
 export default function Home() {
-  const [topComoners, setTopComoners] = useState<Actor[] | undefined>();
-  const [loading, setLoading] = useState(true);
+  // const [topComoners, setTopComoners] = useState<Actor[] | undefined>();
+  // const [loading, setLoading] = useState(true);
 
-  async function getTopComoners() {
-    const endpoint = "/api/leaderboard";
+  // async function getTopComoners() {
+  //   const endpoint = "/api/leaderboard";
 
-    setLoading(true);
-    const response = await fetch(endpoint, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    // setLoading(true);
+    // const response = await fetch(endpoint, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
 
-    if (response.ok) {
-      const res = await response.json();
-      setTopComoners(res.data.slice(0, 10));
-      setLoading(false);
-    } else {
-      const error = await response.json();
-      console.error(error);
-    }
+    // if (response.ok) {
+    //   const res = await response.json();
+      // setTopComoners(res.data.slice(0, 10));
+      // setLoading(false);
+    // } else {
+    //   const error = await response.json();
+    //   console.error(error);
+    // }
 
   /*   try {
       const res = await response.json();
@@ -36,19 +37,21 @@ export default function Home() {
       
     } */
 
-  }
+  // }
 
-  useEffect(() => {
-    getTopComoners();
-  }
-    , []);
+  // useEffect(() => {
+  //   getTopComoners();
+  // }
+  //   , []);
 
   return (
     <>
-    <div className="grid  items-center justify-items-center min-h-screen p-8 gap-16  font-[family-name:var(--font-geist-sans)]">
-      <main className="grid grid-cols-1 md:grid-cols-2 gap-8 row-start-2 items-center sm:items-start pb-4 border-b-2 border-b-[#3c3e44]">
+    <div className="grid  items-center justify-items-center min-h-screen gap-16  font-[family-name:var(--font-geist-sans)]">
+      <main className="pb-4 ">
 
-      <div className="">
+<Header />
+
+      {/* <div className="">
         <h1 className="text-[40px] sm:text-[60px] md:text-[80px]">Welcome to Comon</h1>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
@@ -87,7 +90,9 @@ export default function Home() {
         )))}
         </div>
         
-      </div>
+      </div> */}
+
+
       </main>
 
 {/* see server chats */}
