@@ -38,13 +38,13 @@ function Page() {
 
     return (
         <div className="min-h-screen flex flex-col justify-center items-center pt-12 font-[family-name:var(--font-geist-sans)]">
-            <div className=" px-12 pt-8">
+            <div className="px-2 md:px-12 pt-8">
                 {/* <p className="font-bold">Top Comoners....</p> */}
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 w-full">
                     {loading ? (
                         Array.from({ length: 10 }).map((_, index: number) => (
-                            <div key={index} className="relative animate-pulse space-x-4 flex flex-col items-center justify-center w-[300px] h-[120px] sm:w-[300px] sm:h-[200px] bg-[#101010] border border-[#3c3e44] rounded-2xl p-2">
+                            <div key={index} className="relative animate-pulse space-x-4 flex flex-col items-center justify-center w-[150px] h-[120px] sm:w-[300px] sm:h-[200px] bg-[#101010] border border-[#3c3e44] rounded-2xl p-2">
                                 <div className="flex flex-col gap-2 w-full">
                                     <div className="size-10 rounded-full bg-[#3c3e44]"></div>
                                     <div className="col-span-2 h-2 rounded bg-[#3c3e44]"></div>
@@ -58,25 +58,25 @@ function Page() {
 
                     ) : (
                         topComoners?.map((actor) => (
-                            <div key={actor.id} className="border-2 flex flex-col items-center justify-center gap-6 bg-[#101010] border-[#3c3e44] rounded-xl p-2">
-                                <div  className="z-0 relative flex flex-col items-center justify-center w-[300px] h-[120px] sm:w-[300px] sm:h-[200px] bg-[#101010] border border-[#3c3e44] rounded-2xl p-2">
-                                    <Image className="w-[80%] rounded-2xl border border-[#3c3e44]" src={actor.display_avatar_url} alt="" layout="fill" objectFit="cover" />
+                            <div key={actor.id} className="border-2 flex flex-col items-center md:gap-6 bg-[#101010] border-[#3c3e44] rounded-xl px-2 py-1">
+                                <div  className="z-0 relative flex flex-col w-[150px] h-[120px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[200px] bg-[#101010] border border-[#3c3e44] rounded-2xl p-2">
+                                    <Image className="rounded-2xl border border-[#3c3e44]" src={actor.display_avatar_url} alt="" layout="fill" objectFit="cover" />
                                 </div>
-                                    <div className="flex flex-row justify-between w-full">
+                                    <div className="flex flex-col md:flex-row items-start justify-between w-full">
                                         
                                         <div className="flex flex-col items-start">
                                     <p className="font-bold text-center">{actor.display_name}</p>
-                                    <p className="font-bold text-center">{actor.name}</p>
+                                    <p className="text-center">{actor.name}</p>
                                         </div>
 
-                                        <div>
+                                        <div className="font-bold flex flex-col items-start">
                                     <p className="text-center">LV {actor.level}</p>
-                                    <p className="text-center">{actor.rank}</p>
+                                    <p className="text-center">XP {actor.xp}</p>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <p className="text-center">
+                                            <p className="font-bold text-start md:text-center">
                                                 Joined {(() => {
                                                     const joinedDate = new Date(actor.joined_at ?? Date.now());
                                                     const now = new Date();
