@@ -3,13 +3,12 @@ import { useEffect, useState } from "react";
 import { Actor } from "@/app/types";
 import Image from 'next/image';
 import React from 'react'
-import { FaDiscord, FaExternalLinkAlt } from "react-icons/fa";
-import Link from "next/link";
+import { FaDiscord } from "react-icons/fa";
+// import Link from "next/link";
 
 function Page() {
 
     const [topComoners, setTopComoners] = useState<Actor[] | undefined>();
-    const [community, setCommunity] = useState<Actor[] | undefined>();
     const [loading, setLoading] = useState(true);
 
     async function getTopComoners() {
@@ -25,8 +24,7 @@ function Page() {
 
         if (response.ok) {
             const res = await response.json();
-            setTopComoners(res.data.slice(0, 10));
-            setCommunity(res.data);
+            setTopComoners(res.data);
             setLoading(false);
         } else {
             const error = await response.json();
@@ -44,31 +42,9 @@ function Page() {
         <div className="min-h-screen flex flex-col justify-center items-center pt-12 font-[family-name:var(--font-geist-sans)]">
             <div className="px-2 md:px-12 pt-8">
 
-                <div className="flex flex-row items-center justify-between w-full py-2">
-
-                    <div className="border rounded">
-                        <Link className="text-white" href="/community/all">
-                            <h1 className="px-2 flex gap-2 items-center"> Community <span className="text-[#919193]">{community?.length} commoners</span><FaExternalLinkAlt/></h1>
-                        </Link>
-                    </div>
-
-                    <div className="hidden md:flex flex-row gap-2 items-center">
-                    <div className="rounded border-2">
-                        <input placeholder="Search" className="p" />
-                    </div>
-                    <button>
-                        <h1
-                            className="px-4  bg-[#3c3e44] rounded border-2">
-                            <p> Sort</p>
-                        </h1>
-                    </button>
-                    </div>
-
-                </div>
-
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 w-full">
                     {loading ? (
-                        Array.from({ length: 10 }).map((_, index: number) => (
+                        Array.from({ length: 72 }).map((_, index: number) => (
                             <div key={index} className="relative animate-pulse space-x-4 flex flex-col items-center justify-center w-[150px] h-[120px] sm:w-[300px] sm:h-[200px] bg-[#101010] border border-[#3c3e44] rounded-2xl p-2">
                                 <div className="flex flex-col gap-2 w-full">
                                     <div className="size-10 rounded-full bg-[#3c3e44]"></div>
