@@ -90,7 +90,7 @@ function Navbar() {
         </Link>
         <a
           className="text-white p-2 rounded-3xl"
-          href="#"
+          href="/portfolios"
           onClick={() => toggleBtnClicked('portfolios')}
         >
           <h1

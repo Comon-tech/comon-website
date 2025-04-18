@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <GoogleTagManager gtmId="G-2LBDSNVRW7" />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground dark`}
       >
         <Navbar />
         {children}
