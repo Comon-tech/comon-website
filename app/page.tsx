@@ -1,5 +1,6 @@
-
+"use client";
 import Header from "./components/Header";
+import Marquee from "./components/Marqee";
 
 export default function Home() {
 
@@ -13,19 +14,22 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between w-full p-6">
             <div className="text-center p-4 *:">
               <h1 className="font-bold text-xl">{"("}Community Highligt{")"}</h1>
-              <p>🤖 This server is a vibrant hub for nerds, coders, gamers, and anime lovers! 🎉 We{"'"}re a friendly and supportive bunch, always ready to help each other out with coding problems, discuss our favorite anime, and share coding memes! 🤓 Oh, and we{"'"}re also prone to random bursts of chaotic energy and AI-fueled romance! ❤️😂 Is that good enough? 😉😂</p>
+              <p>Get to know the amazing members of the Comon Society! This section showcases the personalities, talents, and stories that make our community so vibrant and welcoming. From coding wizards to anime enthusiasts, you{"'"}ll find a diverse group of people who are passionate about learning, sharing, and having fun together!</p>
             </div>
 
             <div className="text-center p-4">
               <h1 className="font-bold text-xl">{"("}Projects Highligt{")"}</h1>
-              <p>🤖 This server is a vibrant hub for nerds, coders, gamers, and anime lovers! 🎉 We{"'"}re a friendly and supportive bunch, always ready to help each other out with coding problems, discuss our favorite anime, and share coding memes! 🤓 Oh, and we{"'"}re also prone to random bursts of chaotic energy and AI-fueled romance! ❤️😂 Is that good enough? 😉😂</p>
+              <p>Explore the innovative projects that are being developed within the Comon Society! This section features collaborative coding projects, creative endeavors, and other exciting initiatives that demonstrate the skills and ingenuity of our members. Get inspired and join the next big thing!</p>
             </div>
 
             <div className="text-center p-4">
               <h1 className="font-bold text-xl">{"("}News Highligt{")"}</h1>
-              <p>🤖 This server is a vibrant hub for nerds, coders, gamers, and anime lovers! 🎉 We{"'"}re a friendly and supportive bunch, always ready to help each other out with coding problems, discuss our favorite anime, and share coding memes! 🤓 Oh, and we{"'"}re also prone to random bursts of chaotic energy and AI-fueled romance! ❤️😂 Is that good enough? 😉😂</p>
+              <p>Stay up-to-date on the latest happenings in the Comon Society! This section delivers important announcements, community updates, and exciting news from around the server. Don{"'"}t miss out on the fun – check back often for the inside scoop!</p>
             </div>
           </div>
+      <div>
+        <Marquee />
+      </div>
         </main>
       </div>
 
