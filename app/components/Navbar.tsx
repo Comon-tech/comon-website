@@ -60,9 +60,9 @@ function Navbar() {
           isOpen ? 'flex justify-start w-1/2' : 'hidden'
         } md:flex`}
       >
-        <a
+        <Link
           className="text-white p-2 rounded-3xl"
-          href="#"
+          href="/"
           onClick={() => toggleBtnClicked('home')}
         >
           <h1
@@ -73,7 +73,7 @@ function Navbar() {
           >
             Home
           </h1>
-        </a>
+        </Link>
         <Link
           className="text-white p-2 rounded-3xl"
           href="/community"
@@ -104,7 +104,7 @@ function Navbar() {
         </a>
         <a
           className="text-white p-2 rounded-3xl"
-          href="#"
+          href="/contact"
           onClick={() => toggleBtnClicked('contact')}
         >
           <h1
