@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { IoMdMenu } from 'react-icons/io';
 import { LiaTimesSolid } from 'react-icons/lia';
 import Link from 'next/link';
+import { Sparkles } from "lucide-react"
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,18 +62,21 @@ function Navbar() {
         } md:flex`}
       >
         <Link
-          className="text-white p-2 rounded-3xl"
-          href="/"
+          className={`text-white p-2 rounded-3xl flex items-center justify-center bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 ${
+              btnClicked === 'home' &&
+              'border rounded-3xl border-[#3c3e44] bg-blue-500 text-white'
+            }  ${isOpen && 'px-1'}`}
+          href="https://activa.comon.tech/"
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => toggleBtnClicked('home')}
         >
           <h1
-            className={`flex items-center justify-center  py-0 px-4  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 ${
-              btnClicked === 'home' &&
-              'border rounded-3xl border-[#3c3e44] bg-gray-300 text-white'
-            }  ${isOpen && 'px-1'}`}
+            className={`flex items-center justify-center  py-0 px-4 `}
           >
-            Home
+            Activa
           </h1>
+          <Sparkles className="h-6 w-6 text-white mr-2" />
         </Link>
         <Link
           className="text-white p-2 rounded-3xl"
