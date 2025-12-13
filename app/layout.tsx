@@ -61,10 +61,19 @@ Join Comon today and let's create something amazing... together! 🥰 "
         <meta name="twitter:description" content="Join the Comon server" />
         <meta name="twitter:image" content="https://www.comon.tech/icon.png" />
         <link rel="canonical" href="https://www.comon.tech" />
+       
+        <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ul48eob84o");
+</script>
+        
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground dark`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground dark`}>
+        
         <Navbar />
         {children}
       </body>
